@@ -1,0 +1,18 @@
+.room-wrapper{
+    border: 1px solid #e6e6e6;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.room-name{
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.vessel-name{
+    font-weight: 200;
+    font-size: small;
+    color: chocolate;
+}
