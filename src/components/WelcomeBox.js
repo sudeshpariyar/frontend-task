@@ -11,7 +11,6 @@ const WelcomeBox = ({ vesselName }) => {
     e.preventDefault();
     if (roomName) {
       setListOfRooms([...listOfRooms, roomName]);
-      console.log(listOfRooms);
       setRoomName("");
     }
   };
@@ -20,7 +19,7 @@ const WelcomeBox = ({ vesselName }) => {
     <div className="welcome-box-wrapper">
       <div className="welcome-box">
         <span>Welcome to </span>
-        Test Organigation.
+        {vesselName}.
         <br />
         <button
           onClick={() => setCreateRoomFlag(!createRoomFlag)}
@@ -42,8 +41,8 @@ const WelcomeBox = ({ vesselName }) => {
       </div>
       {listOfRooms.length ? (
         <div className="rooms">
-          {listOfRooms.map((room) => (
-            <Room roomName={room} vessel={vesselName} />
+          {listOfRooms.map((room, index) => (
+            <Room roomName={room} key={index} vessel={vesselName} />
           ))}
         </div>
       ) : (

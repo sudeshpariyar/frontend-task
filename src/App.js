@@ -2,14 +2,19 @@ import { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import WelcomeBox from "./components/WelcomeBox";
+import DevicesList from "./components/DevicesList";
 
 function App() {
-  const [organisationName, setOrganisationName] = useState("Test Organisation");
+  const [listOfDevices, setListOfDevices] = useState([]);
   return (
     <div className="app">
-      <Header organisationName={organisationName} />
-      <WelcomeBox vesselName=" Vessel One" />
-      {/* <button className="create-room-button">Create New Room</button> */}
+      <Header
+        organisationName="Vessel One"
+        listOfDevices={listOfDevices}
+        setListOfDevices={setListOfDevices}
+      />
+      <WelcomeBox vesselName="Vessel One" />
+      <DevicesList listOfDevices={listOfDevices} />
     </div>
   );
 }

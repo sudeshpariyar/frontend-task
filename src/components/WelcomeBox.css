@@ -12,6 +12,9 @@
     border: 1px solid #e6e6e6;
     background-color:  #F4F4F4;
 }
+.create-room-box{
+    padding-top: 1rem;
+}
 
 .create-room-button{
     margin-top: 2rem;
@@ -28,20 +31,6 @@
 .create-room-button:hover{
     color: white;
     background-color: #EB4C36;
-}
-
-.create-room-box{
-    border: 1px solid #e6e6e6;
-    margin-top: 2rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    width: 50%;
-    background-color: white;
-}
-input{
-    border: none;
-    outline: none;
-    background-color: transparent;
 }
 .rooms{
     display: grid;

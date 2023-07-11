@@ -1,0 +1,38 @@
+.device-list-wrapper{
+    margin-inline: 4rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #e6e6e6;
+    background-color:  #F4F4F4;
+}
+
+.no-data{
+    padding-top: 1rem;
+}
+
+.device-list{
+    padding-top:1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.individual-device{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: space-between;
+    border: 1px solid #e6e6e6;
+    border-radius: 1rem; 
+    text-transform: uppercase;
+}
+.device-name{
+    font-weight: 600;
+}
+.device-type{
+    color: gray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}

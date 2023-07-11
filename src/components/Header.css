@@ -13,17 +13,13 @@
 }
 
 .add-devices{
-    color:#EB4C36;
     border: 1px solid #EB4C36;
-    border-radius: 1rem;
+    color:#EB4C36;
     padding: 0.4rem;
     margin-left: 1rem;
-    background-color: white;
     font-weight: 900;
-    cursor: pointer;
 }
 .add-devices:hover{
-    color: white;
     background-color: #EB4C36;
+    color:white
 }
-.organisation-name{}

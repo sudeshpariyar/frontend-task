@@ -5,9 +5,51 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+button{
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.primary-button{
+    color:  #EB4C36;
+}
+.primary-button:hover{
+    background-color:  #EB4C36;
+    color: white;
+}
+.cancel-button{
+    color:gray;
+}
+
+.cancel-button:hover{
+    background: gray;
+    color: white
+}
+
+input{
+  border: 1px solid #e6e6e6;
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+}
+
+.component-title{
+  color:  #EB4C36;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.no-data{
+  color: gray;
 }
