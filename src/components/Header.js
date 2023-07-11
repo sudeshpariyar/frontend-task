@@ -14,7 +14,9 @@ export const Header = ({
     <div className="header-wrapper">
       <div className="header-logo">Harvest Tech</div>
       <div>
-        <span className="vessel-title">{organisationName}</span>
+        <span className="vessel-title" style={{ paddingRight: "1rem" }}>
+          {organisationName}
+        </span>
 
         <button
           className="add-devices"

@@ -32,6 +32,7 @@ const AddNewDevice = ({
       console.log(device, deviceType);
       setListOfDevices([...listOfDevices, { device, deviceType }]);
       setDevice("");
+      setDeviceType("audio");
       setTogleDialogBox(false);
     }
   };

@@ -3,7 +3,7 @@ import "./WelcomeBox.css";
 import Room from "./Room";
 
 const WelcomeBox = ({ vesselName }) => {
-  const [listOfRooms, setListOfRooms] = useState(["Room1", "Room2", "Room3"]);
+  const [listOfRooms, setListOfRooms] = useState([]);
   const [roomName, setRoomName] = useState("");
   const [createRoomFlag, setCreateRoomFlag] = useState(true);
 
@@ -21,23 +21,36 @@ const WelcomeBox = ({ vesselName }) => {
         <span>Welcome to </span>
         <span className="vessel-title">{vesselName}</span>.
         <br />
-        <button
-          onClick={() => setCreateRoomFlag(!createRoomFlag)}
-          className="create-room-button"
-        >
-          Create room
-        </button>
-        {createRoomFlag && (
-          <div className="create-room-box">
-            <form onSubmit={addRoomToList}>
-              <input
-                placeholder="Room Name"
-                value={roomName}
-                onChange={(e) => setRoomName(e.target.value)}
-              />
-            </form>
-          </div>
-        )}
+        <div className="create-room-wrapper">
+          <button
+            onClick={() => setCreateRoomFlag(!createRoomFlag)}
+            className="create-room-button"
+          >
+            Create room
+          </button>
+          {createRoomFlag && (
+            <div className="create-room-box">
+              <form onSubmit={addRoomToList}>
+                <div className="form-wrapper">
+                  <input
+                    placeholder="Room Name"
+                    value={roomName}
+                    onChange={(e) => setRoomName(e.target.value)}
+                  />
+                  <button
+                    className="cancel-button"
+                    onClick={() => setCreateRoomFlag(!createRoomFlag)}
+                  >
+                    Cancel
+                  </button>
+                  <button className="primary-button" type="submit">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          )}
+        </div>
       </div>
       {listOfRooms.length ? (
         <div className="rooms">
@@ -46,7 +59,9 @@ const WelcomeBox = ({ vesselName }) => {
           ))}
         </div>
       ) : (
-        <span>There are no associated rooms.</span>
+        <span className="no-data-wrapper">
+          <span className="no-data">There are no associated rooms.</span>
+        </span>
       )}
     </div>
   );

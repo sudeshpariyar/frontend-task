@@ -1,20 +1,31 @@
 .welcome-box-wrapper{
     display: flex;
     flex-direction: row;
-    gap: 2rem;;
-    margin: 2rem;
-    padding: 2rem;
+    gap: 2rem;
 }
-.welcome-box{
-    flex: 0.65;
+.welcome-box{ 
     border-radius: 1rem;
     padding: 2rem;
     border: 1px solid #e6e6e6;
     background-color:  #F4F4F4;
+    margin-left: 4rem;
+    flex: 0.5;
+}
+.form-wrapper{
+    display: flex;
+    gap: 1rem;
+
 }
 .create-room-box{
-    padding-top: 1rem;
-    padding-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.create-room-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1rem;
 }
 
 .create-room-button{
@@ -37,4 +48,10 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap:1rem
+}
+.no-data-wrapper{
+    padding:1rem;
+    border: 1px solid #e6e6e6;
+    background-color:#F4F4F4;
+    border-radius: 1rem;
 }
