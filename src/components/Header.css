@@ -11,12 +11,14 @@
     font-size: 32px;
     color: #EB4C36;
 }
+.organisatin-title{ 
+    padding-right: 1rem;
+}
 
 .add-devices{
     border: 1px solid #EB4C36;
     color:#EB4C36;
     padding: 0.4rem;
-    margin-left: 1rem;
     font-weight: 900;
 }
 .add-devices:hover{

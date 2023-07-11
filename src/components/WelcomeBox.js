@@ -19,7 +19,7 @@ const WelcomeBox = ({ vesselName }) => {
     <div className="welcome-box-wrapper">
       <div className="welcome-box">
         <span>Welcome to </span>
-        {vesselName}.
+        <span className="vessel-title">{vesselName}</span>.
         <br />
         <button
           onClick={() => setCreateRoomFlag(!createRoomFlag)}

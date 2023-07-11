@@ -13,8 +13,8 @@ export const Header = ({
   return (
     <div className="header-wrapper">
       <div className="header-logo">Harvest Tech</div>
-      <div className="organisation-name">
-        {organisationName}
+      <div>
+        <span className="vessel-title">{organisationName}</span>
 
         <button
           className="add-devices"
