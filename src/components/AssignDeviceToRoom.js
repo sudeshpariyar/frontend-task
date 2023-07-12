@@ -14,13 +14,12 @@ const AssignDeviceToRoom = ({
     setAssignDialogbox(false);
   };
   const handleSubmit = (e) => {
-    console.log(assignedDevice);
     e.preventDefault();
     if (assignedDevice) {
       setListOfAssignedDevices([...listOfAssignedDevices, assignedDevice]);
       setAssignedDevice("");
+      setAssignDialogbox(false);
     }
-    handleClose();
   };
 
   return (

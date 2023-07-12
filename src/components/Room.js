@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./Room.css";
 import { Tooltip } from "react-tooltip";
 import AssignDeviceToRoom from "./AssignDeviceToRoom";
+import useToggle from "./shared/useToggle";
 
 const Room = ({ roomName, vessel, listOfDevices }) => {
-  const [assignDialogbox, setAssignDialogbox] = useState(false);
   const [listOfAssignedDevices, setListOfAssignedDevices] = useState([]);
-
+  const { status: assignDialogbox, toggleStatus: handleDialogboxTogle } =
+    useToggle();
   return (
     <div>
       <div className="room-wrapper">
@@ -16,9 +17,7 @@ const Room = ({ roomName, vessel, listOfDevices }) => {
           className="add-devices"
           data-tooltip-id="my-tooltip"
           data-tooltip-content={"Assign Device to " + roomName}
-          onClick={() => {
-            setAssignDialogbox(!assignDialogbox);
-          }}
+          onClick={handleDialogboxTogle}
         >
           +
           <Tooltip id="my-tooltip" />
@@ -38,7 +37,7 @@ const Room = ({ roomName, vessel, listOfDevices }) => {
       </div>
       <AssignDeviceToRoom
         assignDialogbox={assignDialogbox}
-        setAssignDialogbox={setAssignDialogbox}
+        setAssignDialogbox={handleDialogboxTogle}
         listOfDevices={listOfDevices}
         listOfAssignedDevices={listOfAssignedDevices}
         setListOfAssignedDevices={setListOfAssignedDevices}

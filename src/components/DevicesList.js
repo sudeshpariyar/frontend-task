@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./DevicesList.css";
 import SpeakerIcon from "@mui/icons-material/Speaker";
 import TvIcon from "@mui/icons-material/Tv";
 import { Tooltip } from "react-tooltip";
 import AddNewDevice from "./AddNewDevice";
+import useToggle from "./shared/useToggle";
 
 const DevicesList = ({ listOfDevices, setListOfDevices }) => {
-  const [togleDialogBox, setTogleDialogBox] = useState(false);
-
+  const { status: togleDialogBox, toggleStatus: handleDialogboxTogle } =
+    useToggle();
   return (
     <div className="device-list-wrapper">
       <div className="device-list-header">
@@ -16,16 +17,14 @@ const DevicesList = ({ listOfDevices, setListOfDevices }) => {
           className="add-devices"
           data-tooltip-id="my-tooltip"
           data-tooltip-content={"Add Device "}
-          onClick={() => {
-            setTogleDialogBox(!togleDialogBox);
-          }}
+          onClick={handleDialogboxTogle}
         >
           +
           <Tooltip id="my-tooltip" />
         </button>
         <AddNewDevice
           togleDialogBox={togleDialogBox}
-          setTogleDialogBox={setTogleDialogBox}
+          setTogleDialogBox={handleDialogboxTogle}
           listOfDevices={listOfDevices}
           setListOfDevices={setListOfDevices}
         />

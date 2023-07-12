@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./WelcomeBox.css";
 import Room from "./Room";
+import useToggle from "./shared/useToggle";
 
 const WelcomeBox = ({ vesselName, listOfDevices }) => {
   const [listOfRooms, setListOfRooms] = useState(["TestRoom"]);
   const [roomName, setRoomName] = useState("");
-  const [createRoomFlag, setCreateRoomFlag] = useState(true);
-
+  const { status: createRoomFlag, toggleStatus: changeRoomFlag } = useToggle();
   const addRoomToList = (e) => {
     e.preventDefault();
     if (roomName) {
@@ -22,10 +22,7 @@ const WelcomeBox = ({ vesselName, listOfDevices }) => {
         <span className="vessel-title">{vesselName}</span>.
         <br />
         <div className="create-room-wrapper">
-          <button
-            onClick={() => setCreateRoomFlag(!createRoomFlag)}
-            className="create-room-button"
-          >
+          <button onClick={changeRoomFlag} className="create-room-button">
             Create room
           </button>
           {createRoomFlag && (
@@ -38,10 +35,7 @@ const WelcomeBox = ({ vesselName, listOfDevices }) => {
                     onChange={(e) => setRoomName(e.target.value)}
                   />
                   <div>
-                    <button
-                      className="cancel-button"
-                      onClick={() => setCreateRoomFlag(!createRoomFlag)}
-                    >
+                    <button className="cancel-button" onClick={changeRoomFlag}>
                       Cancel
                     </button>
                     <button className="primary-button" type="submit">

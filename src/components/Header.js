@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import "./Header.css";
 import { Tooltip } from "react-tooltip";
 import AddNewDevice from "./AddNewDevice";
+import useToggle from "./shared/useToggle";
 
 export const Header = ({
   organisationName,
   listOfDevices,
   setListOfDevices,
 }) => {
-  const [togleDialogBox, setTogleDialogBox] = useState(false);
+  const { status: togleDialogBox, toggleStatus: handleDialogboxTogle } =
+    useToggle();
 
   return (
     <div className="header-wrapper">
@@ -22,9 +24,7 @@ export const Header = ({
           className="add-devices"
           data-tooltip-id="my-tooltip"
           data-tooltip-content={"Add Device to " + organisationName}
-          onClick={() => {
-            setTogleDialogBox(!togleDialogBox);
-          }}
+          onClick={handleDialogboxTogle}
         >
           +
           <Tooltip id="my-tooltip" />
@@ -32,7 +32,7 @@ export const Header = ({
       </div>
       <AddNewDevice
         togleDialogBox={togleDialogBox}
-        setTogleDialogBox={setTogleDialogBox}
+        setTogleDialogBox={handleDialogboxTogle}
         listOfDevices={listOfDevices}
         setListOfDevices={setListOfDevices}
       />
