@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DevicesList.css";
 import SpeakerIcon from "@mui/icons-material/Speaker";
 import TvIcon from "@mui/icons-material/Tv";
+import { Tooltip } from "react-tooltip";
+import AddNewDevice from "./AddNewDevice";
 
-const DevicesList = ({ listOfDevices }) => {
+const DevicesList = ({ listOfDevices, setListOfDevices }) => {
+  const [togleDialogBox, setTogleDialogBox] = useState(false);
+
   return (
     <div className="device-list-wrapper">
-      <span className="component-title">List of Devices</span>
+      <div className="device-list-header">
+        <span className="component-title">List of Devices</span>
+        <button
+          className="add-devices"
+          data-tooltip-id="my-tooltip"
+          data-tooltip-content={"Add Device "}
+          onClick={() => {
+            setTogleDialogBox(!togleDialogBox);
+          }}
+        >
+          +
+          <Tooltip id="my-tooltip" />
+        </button>
+        <AddNewDevice
+          togleDialogBox={togleDialogBox}
+          setTogleDialogBox={setTogleDialogBox}
+          listOfDevices={listOfDevices}
+          setListOfDevices={setListOfDevices}
+        />
+      </div>
       {listOfDevices.length ? (
         <div className="device-list">
           {listOfDevices.map((device, index) => (

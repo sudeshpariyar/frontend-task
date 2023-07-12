@@ -15,7 +15,10 @@ function App() {
         setListOfDevices={setListOfDevices}
       />
       <WelcomeBox vesselName="Vessel One" listOfDevices={listOfDevices} />
-      <DevicesList listOfDevices={listOfDevices} />
+      <DevicesList
+        listOfDevices={listOfDevices}
+        setListOfDevices={setListOfDevices}
+      />
     </div>
   );
 }
