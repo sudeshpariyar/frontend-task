@@ -14,11 +14,8 @@ function App() {
         listOfDevices={listOfDevices}
         setListOfDevices={setListOfDevices}
       />
-      <WelcomeBox vesselName="Vessel One" />
-      <div className="devices-rooms-wrapper">
-        <DevicesList className="device-details" listOfDevices={listOfDevices} />
-        <div className="room-details">This is Rooms Details</div>
-      </div>
+      <WelcomeBox vesselName="Vessel One" listOfDevices={listOfDevices} />
+      <DevicesList listOfDevices={listOfDevices} />
     </div>
   );
 }

@@ -11,12 +11,4 @@ body {
   gap: 4rem;
 }
 
-.devices-rooms-wrapper{
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
 
-.room-details{
-  flex: 0.5;
-}

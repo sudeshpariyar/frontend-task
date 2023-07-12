@@ -29,7 +29,6 @@ const AddNewDevice = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (device && deviceType) {
-      console.log(device, deviceType);
       setListOfDevices([...listOfDevices, { device, deviceType }]);
       setDevice("");
       setDeviceType("audio");

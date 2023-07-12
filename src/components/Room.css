@@ -16,3 +16,8 @@
     font-size: small;
     color: chocolate;
 }
+.devices-title{
+    color: chocolate;
+    font-weight: 600;
+    cursor: pointer;
+}

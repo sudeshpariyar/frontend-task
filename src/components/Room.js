@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Room.css";
 import { Tooltip } from "react-tooltip";
-const Room = ({ roomName, vessel }) => {
+import AssignDeviceToRoom from "./AssignDeviceToRoom";
+
+const Room = ({ roomName, vessel, listOfDevices }) => {
+  const [assignDialogbox, setAssignDialogbox] = useState(false);
+  const [listOfAssignedDevices, setListOfAssignedDevices] = useState([]);
+
   return (
     <div>
       <div className="room-wrapper">
@@ -11,14 +16,33 @@ const Room = ({ roomName, vessel }) => {
           className="add-devices"
           data-tooltip-id="my-tooltip"
           data-tooltip-content={"Assign Device to " + roomName}
-          // onClick={() => {
-          //   setTogleDialogBox(!togleDialogBox);
-          // }}
+          onClick={() => {
+            setAssignDialogbox(!assignDialogbox);
+          }}
         >
           +
           <Tooltip id="my-tooltip" />
         </button>
+        <span
+          className="devices-title"
+          data-tooltip-id="assigned-devices"
+          data-tooltip-content={
+            listOfAssignedDevices.length
+              ? listOfAssignedDevices
+              : "No devices Assigned"
+          }
+        >
+          Devices
+          <Tooltip id="assigned-devices" />
+        </span>
       </div>
+      <AssignDeviceToRoom
+        assignDialogbox={assignDialogbox}
+        setAssignDialogbox={setAssignDialogbox}
+        listOfDevices={listOfDevices}
+        listOfAssignedDevices={listOfAssignedDevices}
+        setListOfAssignedDevices={setListOfAssignedDevices}
+      />
     </div>
   );
 };

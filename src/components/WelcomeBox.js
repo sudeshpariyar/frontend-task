@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./WelcomeBox.css";
 import Room from "./Room";
 
-const WelcomeBox = ({ vesselName }) => {
-  const [listOfRooms, setListOfRooms] = useState([]);
+const WelcomeBox = ({ vesselName, listOfDevices }) => {
+  const [listOfRooms, setListOfRooms] = useState(["TestRoom"]);
   const [roomName, setRoomName] = useState("");
   const [createRoomFlag, setCreateRoomFlag] = useState(true);
 
@@ -37,32 +37,41 @@ const WelcomeBox = ({ vesselName }) => {
                     value={roomName}
                     onChange={(e) => setRoomName(e.target.value)}
                   />
-                  <button
-                    className="cancel-button"
-                    onClick={() => setCreateRoomFlag(!createRoomFlag)}
-                  >
-                    Cancel
-                  </button>
-                  <button className="primary-button" type="submit">
-                    Submit
-                  </button>
+                  <div>
+                    <button
+                      className="cancel-button"
+                      onClick={() => setCreateRoomFlag(!createRoomFlag)}
+                    >
+                      Cancel
+                    </button>
+                    <button className="primary-button" type="submit">
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
           )}
         </div>
       </div>
-      {listOfRooms.length ? (
-        <div className="rooms">
-          {listOfRooms.map((room, index) => (
-            <Room roomName={room} key={index} vessel={vesselName} />
-          ))}
-        </div>
-      ) : (
-        <span className="no-data-wrapper">
-          <span className="no-data">There are no associated rooms.</span>
-        </span>
-      )}
+      <div>
+        {listOfRooms.length ? (
+          <div className="rooms">
+            {listOfRooms.map((room, index) => (
+              <Room
+                roomName={room}
+                key={index}
+                vessel={vesselName}
+                listOfDevices={listOfDevices}
+              />
+            ))}
+          </div>
+        ) : (
+          <span className="no-data-wrapper">
+            <span className="no-data">There are no associated rooms.</span>
+          </span>
+        )}
+      </div>
     </div>
   );
 };
