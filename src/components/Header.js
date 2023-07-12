@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Header.css";
 import { Tooltip } from "react-tooltip";
 import AddNewDevice from "./AddNewDevice";

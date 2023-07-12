@@ -50,7 +50,7 @@ const WelcomeBox = ({ vesselName, listOfDevices }) => {
       </div>
       <div>
         {listOfRooms.length ? (
-          <div className="rooms">
+          <div className="rooms-wrapper">
             {listOfRooms.map((room, index) => (
               <Room
                 roomName={room}
